@@ -1,0 +1,1 @@
+counter = 0 # A temperory solution to prevent duplicate image names.

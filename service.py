@@ -19,7 +19,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 import random
-from PIL import Image
+from globals import counter
 
 
 load_dotenv()
@@ -505,11 +505,11 @@ def create_html_report(property_map):
 
     The images the first two pictures in the [house_images] will be used as the first two images in the report, and the rest will be used in the gallery section.
 
-    For the graphs for demographics and property value, you will use "images/demographic_graph.png" and "images/house_value_graph.png" respectively.
+    For the graphs for demographics and property value, you will use "images/demographic_graph{counter}.png" and "images/house_value_graph{counter}.png" respectively.
 
     Return just the html, with the complete code.
 
-    Here is an example template with another address. Complete disregard and erase any mention of the other address (since it's an example) and replace it with new information about our new address: 
+    Here is an example template with another address. Completely disregard and erase any mention of the other address (since it's an example) and replace it with new information about our new address: 
 
     <!DOCTYPE html>
     <html lang="en">

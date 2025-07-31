@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import os
+from globals import counter
 
 def create_graphs(money_data, demographic_data):
     """Generate property value and demographic charts based on input data.
@@ -98,7 +99,7 @@ def _create_money_graph(money_data):
                 bbox=dict(facecolor='white', edgecolor='#e0e0e0', boxstyle='round,pad=0.5'))
 
     plt.tight_layout()
-    plt.savefig('images/money_graph.png', dpi=300, bbox_inches='tight', transparent=True)
+    plt.savefig(f'images/money_graph{globals.counter}.png', dpi=300, bbox_inches='tight', transparent=True)
     plt.close()
 
 def _create_demographic_graph(demographic_data):
@@ -173,5 +174,5 @@ def _create_demographic_graph(demographic_data):
     ax.set_facecolor('none')
 
     plt.tight_layout()
-    plt.savefig('images/demographic_graph.png', dpi=300, bbox_inches='tight', transparent=True)
+    plt.savefig(f'images/demographic_graph{globals.counter}.png', dpi=300, bbox_inches='tight', transparent=True)
     plt.close()

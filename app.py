@@ -7,8 +7,10 @@ from graphs import create_graphs
 import matplotlib
 matplotlib.use('Agg')  # Set the backend to non-interactive Agg
 import matplotlib.pyplot as plt
+from globals import counter
 
 app = FastAPI()
+counter = 0
 
 app.add_middleware(
     CORSMiddleware,
@@ -69,5 +71,7 @@ def get_report(address: str):
     print(property_map) # Debugging output
 
     html_report = create_html_report(property_map)
+
+    counter += 1
 
     return {"output": html_report}
